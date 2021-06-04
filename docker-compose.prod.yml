@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+    api:
+        image: "okakyo/golang-api" 
+        build:
+            context: "api"
+            target: "prod"
+        ports: 
+            - 8000:8000

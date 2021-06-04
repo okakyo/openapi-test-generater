@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+    api:
+        image: "okakyo/golang-api" 
+        build:
+            context: "api"
+            target: "base"
+        volumes: 
+            - ./api:/app/go/base
+        security_opt:
+            - apparmor:unconfined
+        cap_add:
+            - SYS_PTRACE
+        ports: 
+            - 8000:8000

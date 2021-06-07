@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+    api:
+        build:
+            context: "api"
+            target: "dev"
+        volumes: 
+            - ./api:/app/go/base
+        ports: 
+            - 8000:8000
+        command: air -c .air.toml

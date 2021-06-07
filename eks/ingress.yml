@@ -4,6 +4,8 @@ metadata:
   name: golang-api-ingress
   labels:
     name: golang-api-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:

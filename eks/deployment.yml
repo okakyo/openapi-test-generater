@@ -1,6 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golang-api-deployment
+  name: golang-api
 spec:
-  
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golang-api
+  template:
+    metadata: 
+      labels:
+        app: golang-api
+    spec:
+      containers:
+        - name: golang-api
+          image: okakyo/golang-api
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
